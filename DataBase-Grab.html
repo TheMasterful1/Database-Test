@@ -4,11 +4,17 @@
 </head>
 <body>
 <p id = "Reciever" > </p>
+<script>  
+  
 var xhttp = new XMLhttpRequest();
-xhttp.onreadystatechange = funtion() {
-if( 
-}
-
+xhttp.open("GET", "Contacts.xml", false);
+xhttp.send();
+  
+function reciever(xml) {
+  var xmlReciever = xml.responseXML;
+  document.getElementById("Reciever").innerHTML = xmlReciever.getElementsByTagName("Name")[0].childNodes[0].nodeValue;
+};
+  </script>
 </body>
 
 </html
